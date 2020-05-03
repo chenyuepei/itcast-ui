@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-      <div class="row">
+    <!-- <div class="row">
       <hm-button>按钮</hm-button>
       <hm-button type="primary">按钮</hm-button>
       <hm-button type="success">按钮</hm-button>
@@ -39,27 +39,52 @@
       <hm-button disabled type="info">按钮</hm-button>
       <hm-button disabled type="warning">按钮</hm-button>
       <hm-button disabled type="danger">按钮</hm-button>
-    </div>
+    </div>-->
+
+    <!-- <hm-dialog title="温馨提示">
+        使用v-slot指定插槽进行编辑
+        <template v-slot:title>
+          <h3 style="color:red">我是标题</h3>
+        </template>
+    </hm-dialog>-->
+
+    <!-- <hm-dialog visible width="80%" top="200px"></hm-dialog> -->
+    <hm-button type="primary" @click="visible = true">按钮</hm-button>
+      <hm-dialog :visible.sync="visible">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+        <template v-slot:footer>
+          <hm-button type="primary" @click="visible=false">确定</hm-button>
+           <hm-button @click="visible=false">取消</hm-button>
+        </template>
+      </hm-dialog>
   </div>
 </template>
 
 <script>
 export default {
-    methods: {
-    getInfo () {
-      console.log('获取信息！！')//获取信息！！
-    }
+  data() {
+    return {
+      visible: false
+    };
+  },
+  methods: {
+    getInfo() {
+      console.log("获取信息！！"); //获取信息！！
+    },
+  
   }
-}
-
+};
 </script>
 
 <style lang="scss" scoped>
 .row {
- margin-bottom: 20px;
- .hm-button{
-   margin-right: 20px;
- }
+  margin-bottom: 20px;
+  .hm-button {
+    margin-right: 20px;
+  }
 }
-
 </style>
