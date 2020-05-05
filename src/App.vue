@@ -49,7 +49,7 @@
     </hm-dialog>-->
 
     <!-- <hm-dialog visible width="80%" top="200px"></hm-dialog> -->
-    <hm-button type="primary" @click="visible = true">按钮</hm-button>
+    <!-- <hm-button type="primary" @click="visible = true">按钮</hm-button>
       <hm-dialog :visible.sync="visible">
         <ul>
           <li>1</li>
@@ -57,10 +57,17 @@
           <li>3</li>
         </ul>
         <template v-slot:footer>
-          <hm-button type="primary" @click="visible=false">确定</hm-button>
+           <hm-button type="primary" @click="visible=false">确定</hm-button>
            <hm-button @click="visible=false">取消</hm-button>
         </template>
-      </hm-dialog>
+    </hm-dialog>-->
+
+    <!-- input组件 -->
+    <div class="hm-input">
+        <hm-input placeholder="请输入用户名" v-model="username" clearable></hm-input>
+      <hm-input placeholder="请输入用户名" type="password"  v-model="username" showPassword></hm-input>
+    </div>
+
   </div>
 </template>
 
@@ -68,23 +75,29 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
+      username:'cyp'
     };
   },
   methods: {
     getInfo() {
       console.log("获取信息！！"); //获取信息！！
-    },
-  
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.row {
-  margin-bottom: 20px;
-  .hm-button {
-    margin-right: 20px;
+// .row {
+//   margin-bottom: 20px;
+//   .hm-button {
+//     margin-right: 20px;
+//   }
+// }
+
+#app {
+  .hm-input {
+    width: 180px;
   }
 }
 </style>
