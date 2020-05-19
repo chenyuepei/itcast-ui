@@ -63,10 +63,24 @@
     </hm-dialog>-->
 
     <!-- input组件 -->
-    <div class="hm-input">
+    <!-- <div class="hm-input">
         <hm-input placeholder="请输入用户名" v-model="username" clearable></hm-input>
       <hm-input placeholder="请输入用户名" type="password"  v-model="username" showPassword></hm-input>
-    </div>
+    </div> -->
+
+    <!-- <hm-switch v-model="active" ></hm-switch>
+    <hm-switch
+     v-model="active"
+     active-color="#13ce66"
+     inactive-color="#ff4949"
+     ></hm-switch>
+   -->
+        <hm-radio label="1" v-model="gender">男</hm-radio>
+      <hm-radio label="0" v-model="gender">女</hm-radio>
+   <radio-groud v-model="gender">
+     <hm-radio label="1">男</hm-radio>
+     <hm-radio label="0">女</hm-radio>
+   </radio-groud>
 
   </div>
 </template>
@@ -76,7 +90,9 @@ export default {
   data() {
     return {
       visible: false,
-      username:'cyp'
+      username:'cyp',
+      active:false,
+      gender:'1'
     };
   },
   methods: {
